@@ -4,6 +4,7 @@ const cors = require('cors');
 const port = process.env.PORT || 3000;
 
 app.use(cors());
+app.use(express.json());
 
 app.get('/', (req, res) => {
     res.send('Users Management Server is running');
@@ -20,6 +21,10 @@ app.get('/users', (req, res) => {
    
 app.post('/users', (req, res) => {
     console.log('users post method');
+    console.log(req.body);
+    const newUser = req.body;
+    newUser.id = users.length + 1;
+    res.send(newUser);
 })
 
 
