@@ -18,6 +18,9 @@ app.get('/users', (req, res) => {
     res.send(users);
 })
    
+app.post('/users', (req, res) => {
+    console.log('users post method');
+})
 
 
 app.listen(port, () => {
